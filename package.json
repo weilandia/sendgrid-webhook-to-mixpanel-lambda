@@ -1,0 +1,16 @@
+{
+  "name": "sendgrid-webhook-to-mixpanel-lambda",
+  "version": "1.0.0",
+  "description": "A lambda function for tracking SendGrid events in Mixpanel",
+  "main": "index.js",
+  "author": "Nick Weiland <nickweiland@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mixpanel": "^0.7.0",
+    "serverless-http": "^1.5.2"
+  },
+  "devDependencies": {
+    "serverless-offline": "^3.16.0"
+  }
+}
