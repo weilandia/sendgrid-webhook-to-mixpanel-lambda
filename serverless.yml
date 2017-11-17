@@ -6,9 +6,16 @@ provider:
   stage: dev
   region: us-east-1
   profile: weilandia
+  environment:
+    MIXPANEL_TOKEN: ${file(./serverless.env.yml):${self:provider.stage}.MIXPANEL_TOKEN}
 
 functions:
-  app:
-    handler: index.handler
+  trackEvents:
+    handler: mpTrackSendGrid.handler
     events:
-      - http: 'POST /mixpanel_sendgrid_event'
+      - http:
+          path: mixpanel_sendgrid_events
+          method: post
+
+plugins:
+  - serverless-offline
