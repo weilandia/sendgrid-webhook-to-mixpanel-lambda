@@ -19,7 +19,9 @@ A simple lambda function that can be used to transfer SendGrid event data to Mix
     MIXPANEL_TOKEN: "PROD TOKEN"
 ```
 
-4. Deploy
+4. Add your AWS credentials profile to ```serverless.yml```.
+
+4. Deploy.
 
 ``` sh
   sls deploy --stage prod

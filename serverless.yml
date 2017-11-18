@@ -3,9 +3,9 @@ service: sendgrid-webhook-to-mixpanel-lambda
 provider:
   name: aws
   runtime: nodejs6.10
-  stage: dev
+  stage: ${opt:stage}
   region: us-east-1
-  profile: weilandia
+  profile: your_aws_credentials_profile
   environment:
     MIXPANEL_TOKEN: ${file(./serverless.env.yml):${self:provider.stage}.MIXPANEL_TOKEN}
 
